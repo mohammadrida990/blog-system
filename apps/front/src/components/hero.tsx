@@ -32,7 +32,7 @@ const Hero = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          className="flex flex-col w-full justify-center md:w-2/5 items-center text-center"
+          className="flex flex-col w-full justify-center md:w-2/5 items-center text-center py-10"
         >
           <motion.p
             className="capitalize tracking-wide w-full text-3xl"
