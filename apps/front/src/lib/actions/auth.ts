@@ -31,7 +31,11 @@ export async function signup(
     },
   });
 
-  if (data.errors) return { message: "Something went wrong" };
+  if (!data)
+    return {
+      message: "Email already exists",
+      data: Object.fromEntries(formData.entries()),
+    };
 
   redirect("/auth/signin");
 }
