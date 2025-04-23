@@ -15,10 +15,10 @@ export const fetchGraphQl = async (query: string, variables = {}) => {
 
   const result = await response.json();
 
-  if (result.errors) {
-    console.error("GrapghQl errors:", result.errors);
+  if (!response.ok) {
+    console.error("GraphQl errors:", result.errors);
 
-    throw new Error("fails to fetch data from Graghql");
+    throw new Error("fails to fetch data from GraphQl");
   }
 
   return result.data;

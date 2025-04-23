@@ -57,7 +57,11 @@ export async function signIn(
     },
   });
 
-  if (data.errors) return { message: "invalid credentials" };
+  if (!data)
+    return {
+      message: "Invalid credentials",
+      data: Object.fromEntries(formData.entries()),
+    };
 
   await createSession({
     user: {

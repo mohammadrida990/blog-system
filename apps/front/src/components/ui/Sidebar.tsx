@@ -62,12 +62,14 @@ const SideBar = (props: Props) => {
           <Link
             href="/user/posts"
             className="hover:text-sky-600 hover:dark:text-slate-600"
+            onClick={() => setShow(false)}
           >
             My posts
           </Link>
 
           <Link
             href="/user/create-post"
+            onClick={() => setShow(false)}
             className="hover:text-sky-600 hover:dark:text-slate-600"
           >
             Create post
@@ -81,12 +83,14 @@ const SideBar = (props: Props) => {
             <>
               <Link
                 href="/auth/signin"
+                onClick={() => setShow(false)}
                 className="hover:text-sky-600 hover:dark:text-slate-600"
               >
                 SignIn
               </Link>
               <Link
                 href="/auth/signup"
+                onClick={() => setShow(false)}
                 className="hover:text-sky-600 hover:dark:text-slate-600"
               >
                 Signup

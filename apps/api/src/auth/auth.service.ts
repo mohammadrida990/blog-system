@@ -13,7 +13,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
   async validateLocalUser({ email, password }: SignInInput) {
-    const user = await this.prisma.user.findFirst({
+    const user = await this.prisma.user.findUnique({
       where: {
         email,
       },
@@ -21,7 +21,7 @@ export class AuthService {
 
     if (!user) throw new UnauthorizedException('user not found');
 
-    const passwordVerify = await verify(user?.password as string, password);
+    const passwordVerify = await verify(user?.password, password);
 
     if (!passwordVerify) throw new UnauthorizedException('invalid credentials');
 
