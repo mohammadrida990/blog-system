@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 import React from "react";
 import SignInForms from "./_components/SignInForms";
 
@@ -15,10 +15,10 @@ const SignInPage = () => {
       </h1>
 
       <SignInForms />
-
+      {/* 
       <Link href="/auth/forgot" className="text-primary font-thin text-right">
         Forget your password
-      </Link>
+      </Link> */}
     </div>
   );
 };
